@@ -1,3 +1,3 @@
-# ProgrammeringB eksamensprojekt
-Af Nicklas Kaadner
+# Informatik B eksamensprojekt
+Af Alexander Henriksen, Nicklas Kaadner og Jacob Holm
 
