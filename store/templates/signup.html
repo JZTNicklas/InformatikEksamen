@@ -1,0 +1,17 @@
+{% extends "template.html" %}
+
+{% block headline %}
+	<h1>Sign Up</h1>
+{% endblock headline %}
+
+{% block body %}
+	<div>
+		<form method="POST" action="">
+			{{ form.hidden_tag() }}	
+			{{ form.username }}
+			{{ form.email }}
+			{{ form.password }}
+			{{ form.submit }}
+		</form>
+	</div>
+{% endblock body %}
