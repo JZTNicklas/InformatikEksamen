@@ -1,1 +1,3 @@
-# InformatikEksamen
+# ProgrammeringB eksamensprojekt
+Af Nicklas Kaadner
+
