@@ -6,12 +6,12 @@ from store.models import Users
 class RegistrationForm(FlaskForm):
 	username = StringField("username", validators=[DataRequired(), Length(min=2,max=20)])
 	email = StringField("email", validators=[DataRequired(), Email()])
-	password = StringField("password", validators=[DataRequired()])
+	password = PasswordField("password", validators=[DataRequired()])
 	submit = SubmitField("Tilmeld")
 
 
 
 class LoginForm(FlaskForm):
 	email = StringField("email", validators=[DataRequired()])
-	password = StringField("password", validators=[DataRequired()])
+	password = PasswordField("password", validators=[DataRequired()])
 	submit = SubmitField("Log ind")

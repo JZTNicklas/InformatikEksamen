@@ -6,25 +6,28 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div id="content" class="center">
-		<div id="pic" class="center">
-			<img id="logo"src="/static/images/asklepios.svg">
-		</div>
-		
-		<div id="login" class="center">
-			<form method="POST" action="">
-				<div id="input">
-					{{ form.hidden_tag() }}	
-					<p>Email</p>
-					{{ form.email }}
-					<p>Kodeord</p>
-					{{ form.password }}
-				</div>
-				<div id="buttons" class="center">
-					{{ form.submit }}
-					<a href="/signup"><button type="submit">Tilmeld</button></a>
-				</div>
-			</form>
+	<div id="contentwrapper">
+		<div id="content" class="center">
+			
+			<img id="logo"src="/static/images/asklepios.svg" class="center">
+
+			<div id="login" class="center">
+				<form method="POST" action="">
+					<div id="input">
+						{{ form.hidden_tag() }}	
+						<p>Email</p>
+						{{ form.email }}
+						<p>Kodeord</p>
+						{{ form.password }}
+					</div>
+					<div id="buttons" class="center">
+						{{ form.submit }}
+					</div>
+					<div id="signup" class="center">
+						<a href="/signup">Ikke en bruger endnu? Klik her for at tilmelde dig</a>
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
 </body>
