@@ -1,21 +1,9 @@
 from store import db, login_manager
 from flask_table import Table, Col
 from flask_login import UserMixin
+from datetime import datetime, date
+from math import ceil
 
-class Items(db.Model):
-	id = db.Column(db.Integer, primary_key=True)
-	name = db.Column(db.String)
-	price = db.Column(db.Float)
-	stock = db.Column(db.Integer)
-	
-	def __repr__(self):
-		return self.name
-
-	def getStock(self):
-		return self.stock
-
-	def getPrice(self):
-		return self.price
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -27,7 +15,7 @@ class Users(db.Model, UserMixin):
 	password = db.Column(db.String)
 	username = db.Column(db.String, unique=True)
 	admin = db.Column(db.Boolean,default=False)
-
+	calendar = db.relationship("Calendar",backref="user",lazy=True)
 
 	def __repr__(self):
 		return self.email
@@ -37,6 +25,40 @@ class Users(db.Model, UserMixin):
 
 	def isAdmin(self):
 		return self.admin
+
+class Calendar(db.Model):
+	id = db.Column(db.Integer, primary_key=True)
+	dag = db.relationship("Dag",backref="calendar",lazy=True)
+	#custom_dag = db.relationship("CustomDag",backref="calendar",lazy=True)
+	user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+	def __repr__(self):
+		return self.user_id
+
+
+class Dag(db.Model):
+	id = db.Column(db.Integer, primary_key=True)
+	date = db.Column(db.Integer, default=datetime.now().isoweekday())
+	begivenhed = db.relationship("Begivenhed",backref="dag",lazy=True)
+	calendar_id = db.Column(db.Integer, db.ForeignKey("calendar.id"), nullable=False)
+
+class Begivenhed(db.Model):
+	id = db.Column(db.Integer, primary_key=True)
+	time = db.Column(db.DateTime, default=ceil(datetime.now().hour))
+	content = db.Column(db.String, nullable=False)
+	begivenhed_id = db.Column(db.Integer, db.ForeignKey("dag.id"), nullable=False)
+
+'''class CustomDag(db.Model):
+	id = db.Column(db.Integer, primary_key=True)
+	date = db.Column(db.Integer, default=datetime.now().isoweekday())
+	begivenhed = db.relationship("CustomBegivenhed",backref="dag",lazy=True)
+	begivenhed_id = db.Column(db.Integer, db.ForeignKey("calendar.id"), nullable=False)
+
+class CustomBegivenhed(db.Model):
+	id = db.Column(db.Integer, primary_key=True)
+	time = db.Column(db.DateTime, default=ceil(datetime.now().hour))
+	content = db.Column(db.String, nullable=False)
+	begivenhed_id = db.Column(db.Integer, db.ForeignKey("customDag.id"), nullable=False)
+'''
 
 class databaseResults(Table):
     id = Col('id', show=False)

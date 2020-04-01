@@ -4,14 +4,14 @@ from wtforms.validators import DataRequired, Length, Email, ValidationError
 from store.models import Users
 
 class RegistrationForm(FlaskForm):
-	username = StringField("username", validators=[DataRequired(), Length(min=3,max=15)])
+	username = StringField("username", validators=[DataRequired(), Length(min=2,max=20)])
 	email = StringField("email", validators=[DataRequired(), Email()])
 	password = StringField("password", validators=[DataRequired()])
-	submit = SubmitField("Sign up")
+	submit = SubmitField("Tilmeld")
 
 
 
 class LoginForm(FlaskForm):
-	username = StringField("username", validators=[DataRequired()])
+	email = StringField("email", validators=[DataRequired()])
 	password = StringField("password", validators=[DataRequired()])
-	submit = SubmitField("Log in")
+	submit = SubmitField("Log ind")
