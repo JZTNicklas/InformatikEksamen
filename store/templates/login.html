@@ -1,17 +1,20 @@
-{% extends "template.html" %}
-
-{% block headline %}
-	<h1>Login</h1>
-{% endblock headline %}
-
-{% block body %}
-	<div>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Asklepios</title>
+</head>
+<body>
+	<div id="content">
+		<img id="logo "src="/static/images/asklepios.svg">
 		<form method="POST" action="">
 			{{ form.hidden_tag() }}	
-			{{ form.username }}
+			<p>Email</p>
+			{{ form.email }}
+			<p>Kodeord</p>
 			{{ form.password }}
 			{{ form.submit }}
 		</form>
+		<a href="/signup"><button type="submit">Tilmeld</button></a>
 	</div>
-	<a href="/signup">Not already a user. Click here to sign up</a>
-{% endblock body %}
+</body>
+</html>
