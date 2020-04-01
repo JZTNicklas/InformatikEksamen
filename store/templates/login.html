@@ -2,19 +2,30 @@
 <html>
 <head>
 	<title>Asklepios</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div id="content">
-		<img id="logo "src="/static/images/asklepios.svg">
-		<form method="POST" action="">
-			{{ form.hidden_tag() }}	
-			<p>Email</p>
-			{{ form.email }}
-			<p>Kodeord</p>
-			{{ form.password }}
-			{{ form.submit }}
-		</form>
-		<a href="/signup"><button type="submit">Tilmeld</button></a>
+	<div id="content" class="center">
+		<div id="pic" class="center">
+			<img id="logo"src="/static/images/asklepios.svg">
+		</div>
+		
+		<div id="login" class="center">
+			<form method="POST" action="">
+				<div id="input">
+					{{ form.hidden_tag() }}	
+					<p>Email</p>
+					{{ form.email }}
+					<p>Kodeord</p>
+					{{ form.password }}
+				</div>
+				<div id="buttons" class="center">
+					{{ form.submit }}
+					<a href="/signup"><button type="submit">Tilmeld</button></a>
+				</div>
+			</form>
+		</div>
 	</div>
 </body>
 </html>
