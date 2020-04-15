@@ -31,6 +31,7 @@ class Calendar(db.Model):
 	dag = db.relationship("Dag",backref="calendar",lazy=True)
 	#custom_dag = db.relationship("CustomDag",backref="calendar",lazy=True)
 	user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+	
 	def __repr__(self):
 		return str(self.user_id)
 
@@ -40,13 +41,16 @@ class Dag(db.Model):
 	date = db.Column(db.Integer, default=datetime.now().isoweekday())
 	begivenhed = db.relationship("Begivenhed",backref="dag",lazy=True)
 	calendar_id = db.Column(db.Integer, db.ForeignKey("calendar.id"), nullable=False)
+	
 	def __repr__(self):
 		return str(self.calendar_id)
+
+
 class Begivenhed(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	time = db.Column(db.DateTime, default=ceil(datetime.now().hour))
 	content = db.Column(db.String, nullable=False)
-	begivenhed_id = db.Column(db.Integer, db.ForeignKey("dag.id"), nullable=False)
+	dag_id = db.Column(db.Integer, db.ForeignKey("dag.id"), nullable=False)
 	def __repr__(self):
 		return str(self.begivenhed_id)
 '''class CustomDag(db.Model):

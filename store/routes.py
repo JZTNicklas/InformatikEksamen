@@ -1,8 +1,9 @@
 from flask import render_template, redirect, url_for, request, make_response
-from store.models import Users, databaseResults
+from store.models import Users, databaseResults, Calendar, Dag, Begivenhed
 from store.forms import RegistrationForm, LoginForm
 from store import app, db
 from flask_login import login_user, logout_user, current_user, login_required
+from math import ceil
 
 @app.route('/')
 @app.route('/home')
@@ -21,9 +22,23 @@ def signup():
 			return render_template("signup.html", form=form)
 		if Users.query.filter_by(email=form.email.data).first():
 			return render_template("signup.html", form=form)	
-		user = Users(email=form.email.data,username=form.username.data,password=form.password.data)
-		db.session.add(user)
+		db.session.add(Users(email=form.email.data,username=form.username.data,password=form.password.data))
 		db.session.commit()
+		user = Users.query.filter_by(username=form.username.data).first()
+		
+		db.session.add(Calendar(user_id=user.id))
+		db.session.commit()
+		cal = Calendar.query.filter_by(user_id=user.id).first()
+
+		for i in range(1,8):
+			db.session.add(Dag(calendar_id=cal.id))
+			db.session.commit()
+			dag = Dag.query.filter_by(calendar_id=cal.id).first()
+			db.session.add(Begivenhed(time=ceil(datetime.now().hour),content="Vask hænder!",dag_id=dag.id))
+			db.session.commit()
+
+		
+
 		return redirect('/login')
 	return render_template("signup.html", form=form)
 	
