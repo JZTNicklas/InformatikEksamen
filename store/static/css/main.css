@@ -3,97 +3,79 @@
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif; }
-.center{
-	display:flex;
-	align-items:center;
 
-}
+.center {
+  display: flex;
+  align-items: center; }
 
-#contentwrapper{
-	position:absolute;
-	width:100%;
-	height:100%;
-	background: rgb(64,67,81);
-	background: linear-gradient(235deg, rgba(64,67,81,1) 0%, rgba(156,161,164,1) 98%);
-	
-	}
+#contentwrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #404351;
+  background: linear-gradient(235deg, #404351 0%, #9ca1a4 98%); }
+  #contentwrapper #content {
+    display: flex;
+    flex-direction: column; }
+    #contentwrapper #content #pic {
+      width: 50%; }
+    #contentwrapper #content #logo {
+      height: auto;
+      width: 50%;
+      margin-top: 5%;
+      padding: 2rem; }
+    #contentwrapper #content #login {
+      width: 50%;
+      height: 40%;
+      justify-content: center; }
+      #contentwrapper #content #login #input {
+        display: flex;
+        flex-direction: column;
+        width: 100%; }
+      #contentwrapper #content #login #username {
+        width: 100%;
+        border-radius: 5px;
+        height: 2rem;
+        font-size: 1.3rem;
+        margin: 0.1rem 0 1rem 0; }
+      #contentwrapper #content #login #email {
+        width: 100%;
+        border-radius: 5px;
+        height: 2rem;
+        font-size: 1.3rem;
+        margin: 0.1rem 0 1rem 0; }
+      #contentwrapper #content #login #password {
+        width: 100%;
+        border-radius: 5px;
+        height: 2rem;
+        font-size: 1.3rem;
+        margin: 0.1rem 0 1rem 0; }
+      #contentwrapper #content #login #submit {
+        -webkit-appearance: none;
+        border-radius: 10px;
+        width: 100%;
+        height: 3em;
+        font-size: 100%;
+        background-color: #A7E68E;
+        border: 2px solid #404351; }
+    #contentwrapper #content a {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 2rem;
+      width: 30rem;
+      height: 2rem;
+      border: 2px solid #404351;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      background-color: #2c96d3;
+      color: black;
+      align-items: center;
+      text-decoration: none; }
+    #contentwrapper #content form {
+      width: 50%;
+      height: 100%; }
+    #contentwrapper #content p {
+      font-size: 150%; }
 
-#content{
-	
-	display:flex;
-	flex-direction: column;	
-}
-
-#pic{
-	width:50%;
-	
-}
-
-#logo {
-	height:auto;
-	width:50%;
-	margin-top: 10%;
-	padding: 2rem;
-	
-	
-}
-
-#login{
-	width:50%;
-	height:40%;
-	justify-content: center;
-	
-}
-#submit{
-	-webkit-appearance: none;
-	border-radius: 10px;
-	width:100%;
-	height:3em;
-	font-size: 100%;
-	background-color: #A7E68E;
-	border:2px solid #404351;
-}
-#email{
-	
-	width:100%;
-	border-radius: 5px;
-	height:2rem;
-	font-size: 1.3rem;
-	margin:1rem 0 1rem 0;
-}
-#password{
-	width:100%;
-	border-radius: 5px;
-	height:2rem;
-	font-size: 1.3rem;
-	margin:1rem 0 1rem 0;
-
-}
-#signup{
-	margin-top: 1rem;
-	text-align:center;
-}
-#input{
-
-	display:flex;
-	flex-direction: column;
-	width:100%;
-	
-
-}
-form{
-	width:50%;
-	height:100%;
-}
-p{
-font-size: 150%;
-}
-
-#buttons{
-
-}
-
-
-
-
-
+/*# sourceMappingURL=main.css.map */
