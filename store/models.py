@@ -48,11 +48,11 @@ class Dag(db.Model):
 
 class Begivenhed(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
-	time = db.Column(db.DateTime, default=ceil(datetime.now().hour))
-	content = db.Column(db.String, nullable=False)
+	time = db.Column(db.Integer, default=int(ceil(datetime.now().hour)))
+	content = db.Column(db.String)
 	dag_id = db.Column(db.Integer, db.ForeignKey("dag.id"), nullable=False)
 	def __repr__(self):
-		return str(self.begivenhed_id)
+		return str(self.content)
 '''class CustomDag(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	date = db.Column(db.Integer, default=datetime.now().isoweekday())
