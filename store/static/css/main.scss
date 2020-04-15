@@ -71,6 +71,11 @@
 				font-size: 100%;
 				background-color: #A7E68E;
 				border:2px solid #404351;
+				transition-duration: 0.4s;
+			}
+			#submit:hover{
+				background-color: #4CAF50; /* Green */
+  				color: white;
 			}
 		}
 		a{
