@@ -31,13 +31,14 @@ def signup():
 		db.session.commit()
 		cal = Calendar.query.filter_by(user_id=user.id).first()
 
-		for i in range(1,8):
+		for i in range(7):
 			db.session.add(Dag(calendar_id=cal.id))
 			db.session.commit()
-			dag = Dag.query.filter_by(calendar_id=cal.id).first()
-			db.session.add(Begivenhed(time=ceil(datetime.now().hour),content="Vask hænder!",dag_id=dag.id))
+			
+			dag = Dag.query.filter_by(calendar_id=cal.id)[i]
+			db.session.add(Begivenhed(content="Vask hænder!",dag_id=dag.id))
 			db.session.commit()
-
+			
 		
 
 		return redirect('/login')
