@@ -3,6 +3,7 @@ from store.models import Users, databaseResults, Calendar, Dag, Begivenhed
 from store.forms import RegistrationForm, LoginForm
 from store import app, db
 from flask_login import login_user, logout_user, current_user, login_required
+from datetime import datetime, date
 from math import ceil
 
 @app.route('/')
