@@ -11,8 +11,10 @@
 			
 			<img id="logo"src="/static/images/asklepios.svg" class="center">
 
-			<div id="login" class="center">
-				
+			<div id="calendar">
+				{% if current_user.is_authenticated %}
+					{{ table }}
+				{% endif %}
 			</div>
 		</div>
 	</div>

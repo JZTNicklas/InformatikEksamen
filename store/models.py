@@ -48,26 +48,15 @@ class Dag(db.Model):
 
 class Begivenhed(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
-	time = db.Column(db.Integer, default=int(ceil(datetime.now().hour)))
+	time = db.Column(db.String)
 	content = db.Column(db.String)
 	dag_id = db.Column(db.Integer, db.ForeignKey("dag.id"), nullable=False)
 	def __repr__(self):
 		return str(self.content)
-'''class CustomDag(db.Model):
-	id = db.Column(db.Integer, primary_key=True)
-	date = db.Column(db.Integer, default=datetime.now().isoweekday())
-	begivenhed = db.relationship("CustomBegivenhed",backref="dag",lazy=True)
-	begivenhed_id = db.Column(db.Integer, db.ForeignKey("calendar.id"), nullable=False)
 
-class CustomBegivenhed(db.Model):
-	id = db.Column(db.Integer, primary_key=True)
-	time = db.Column(db.DateTime, default=ceil(datetime.now().hour))
-	content = db.Column(db.String, nullable=False)
-	begivenhed_id = db.Column(db.Integer, db.ForeignKey("customDag.id"), nullable=False)
-'''
 
-class databaseResults(Table):
+class calendarTable(Table):
     id = Col('id', show=False)
-    name = Col('Name')
-    price = Col('Price')
-    stock = Col('Stock')
+    time = Col("Tid")
+    content = Col('Din Kalender')
+    

@@ -2,13 +2,13 @@
 <html>
 <head>
 	<title>Asklepios</title>
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/loginSignup.css') }}">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
 	<div id="contentwrapper">
 		<div id="content" class="center">
 			<img id="logo"src="/static/images/asklepios.svg" class="center">
-
 			<div id="login" class="center">
 				<form method="POST" action="">
 					{{ form.hidden_tag() }}	
