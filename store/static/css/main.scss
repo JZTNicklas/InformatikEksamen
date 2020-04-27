@@ -17,27 +17,57 @@
 	height:100%;
 	background: linear-gradient(235deg, rgba(64,67,81,1) 0%, rgba(156,161,164,1) 98%);
 	#logo {
-		width: 50%;
+		width: 30%;
 	}
 	#content {
 		display: flex;
 		flex-direction: column;
-		#calendar {
+		#nav {
+			display: flex;
+			flex-direction: row-reverse;
 			width: 100%;
-		
-			table {
-			width: 50%;
-			border: .2rem solid black;
-			border-radius: .1rem;
-			margin: 1rem;
-				td, thead {
-					height: 1rem;
-					border: .1rem solid black;
-					border-collapse: collapse;
-					padding: .1rem;
-					text-align: center;
+			height: 20%;
+			text-align: right;
+			padding: .4rem .4rem 0 0;
+			a {
+				width: auto;
+				height: auto;
+				padding: .3rem;
+				border: 1px solid black;
+				border-radius: 2px;
+				background: #C84630;
+				text-decoration: none;
+				color: black;
+			}
+
+		}
+		#board {
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			#calendar {
+				width: 65%;
+				padding: 1rem;
+				table {
+					width: 100%;
+					border: .2rem solid black;
+					border-radius: .1rem;
+					background-color: #F7FFF7;
+					td, thead {
+						height: 1rem;
+						border: .1rem solid black;
+						border-collapse: collapse;
+						padding: .1rem;
+						text-align: center;
+					}
 				}
 			}
+			#links {
+				display: flex;
+				flex-direction: column;
+				padding: 1rem;
+			}
 		}
+		
 	}
 }

@@ -8,17 +8,25 @@
 <body>
 	<div id="contentwrapper">
 		<div id="content" class="center">
-			
+			<div id="nav">
+				<a id="logout" href="/logout">Logout</a>
+			</div>
 			<img id="logo"src="/static/images/asklepios.svg" class="center">
-
-			<div id="calendar">
+			<div id="board">
+				<div id="calendar">
 				{% if current_user.is_authenticated %}
-					{{ date }}/{{month}}
+					Dagens dato{{ date }}/{{month}}
 					{{ table }}
 				{% else %}
 					<a href="/login">Login</a>
 				{% endif %}
+				</div>
+				<div id="links">
+					<a href="https://www.Coronasmitte.dk">Coronasmitte.dk</a>
+					<a href="https://www.sst.dk/da/corona">Sundhedsstyrelse.dk</a>
+				</div>
 			</div>
+			
 		</div>
 	</div>
 </body>
