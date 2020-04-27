@@ -15,9 +15,9 @@ class LoginForm(FlaskForm):
 	submit = SubmitField("Log ind")
 
 class ChangeForm(FlaskForm):
-	dag = IntegerField("dag")
-	time = IntegerField("time")
-	content = StringField("content")
-	submit = SubmitField("Log ind")
+	dag = IntegerField("dag", validators=[DataRequired()])
+	time = IntegerField("time", validators=[DataRequired()])
+	content = StringField("content", validators=[DataRequired()])
+	submit = SubmitField("submit")
 
 ''', validators=[DataRequired(),NumberRange(min=0,max=6)]'''

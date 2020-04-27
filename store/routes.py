@@ -9,11 +9,14 @@ from math import ceil
 @app.route('/')
 @app.route('/home')
 def home():
+	idag = date.today()
 	table = ""
 	if current_user.is_authenticated:
-		begivenhedList = Begivenhed.query.filter_by(dag_id=date.today().isoweekday())
+		begivenhedList = Begivenhed.query.filter_by(dag_id=idag.isoweekday())
 		table = calendarTable(begivenhedList)
-	return render_template("home.html", date=datetime.now().day,month=datetime.now().month, table=table)
+		return render_template("home.html", date=idag.day,month=idag.month, table=table)
+	else:
+		return redirect('/login')
 
 
 @app.route('/signup', methods=["GET","POST"])
@@ -72,7 +75,7 @@ def change():
 		print("1")
 		user = Users.query.filter_by(email=current_user.email).first()
 		cal = Calendar.query.filter_by(user_id=user.id).first()
-		dag = Dag.query.filter_by(calendar_id=cal.id).all()[form.dag.data]
+		dag = Dag.query.filter_by(calendar_id=cal.id).all()[form.dag.data-1]
 		begivenhed = Begivenhed.query.filter_by(dag_id=dag.id).all()[form.time.data]
 		begivenhed.content = form.content.data
 		db.session.commit()

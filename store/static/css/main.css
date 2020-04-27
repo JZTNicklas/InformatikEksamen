@@ -21,14 +21,14 @@
     flex-direction: column; }
     #contentwrapper #content #calendar {
       width: 100%; }
-    #contentwrapper #content table {
-      width: 50%;
-      border: .2rem solid black;
-      border-radius: .1rem;
-      margin: 1rem; }
-      #contentwrapper #content table td, #contentwrapper #content table thead {
-        height: 1rem;
-        border: .1rem solid black;
-        border-collapse: collapse;
-        padding: .1rem;
-        text-align: center; }
+      #contentwrapper #content #calendar table {
+        width: 50%;
+        border: .2rem solid black;
+        border-radius: .1rem;
+        margin: 1rem; }
+        #contentwrapper #content #calendar table td, #contentwrapper #content #calendar table thead {
+          height: 1rem;
+          border: .1rem solid black;
+          border-collapse: collapse;
+          padding: .1rem;
+          text-align: center; }

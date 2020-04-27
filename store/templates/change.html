@@ -13,18 +13,20 @@
 
 			<div id="calendar">
 				{% if current_user.is_authenticated %}
-					{{ form.hidden_tag() }}	
-					<p>Dag</p>
-					{{ form.dag }}
-					<p>Time</p>
-					{{ form.time }}
-					<p>Content</p>
-					{{ form.content }}
-					<div id="buttons" class="center">
+					<form method="POST" action="">
+						{{ form.hidden_tag() }}	
+						<p>Dag</p>
+						{{ form.dag }}
+						<p>Time</p>
+						{{ form.time }}
+						<p>Content</p>
+						{{ form.content }}
 						{{ form.submit }}
-					</div>
+					</form>
 				{% else %}
-					<a href="/login">Login</a>
+					<div id="signup" class="center">
+						<a href="/login">Login</a>
+					</div>
 				{% endif %}
 			</div>
 		</div>
