@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Asklepios</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div id="contentwrapper">
+		<div id="content" class="center">
+			
+			<img id="logo"src="/static/images/asklepios.svg" class="center">
+
+			<div id="calendar">
+				{% if current_user.is_authenticated %}
+					{{ form.hidden_tag() }}	
+					<p>Dag</p>
+					{{ form.dag }}
+					<p>Time</p>
+					{{ form.time }}
+					<p>Content</p>
+					{{ form.content }}
+					<div id="buttons" class="center">
+						{{ form.submit }}
+					</div>
+				{% else %}
+					<a href="/login">Login</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</body>
+</html>
