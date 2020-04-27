@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -34,10 +35,16 @@
         border-radius: 2px;
         background: #C84630;
         text-decoration: none;
-        color: black; }
+        color: black;
+        transition-duration: 0.4s; }
+      #contentwrapper #content #nav a:hover {
+        background-color: #A03122;
+        /* Rød */
+        color: #dddddd; }
     #contentwrapper #content #board {
       display: flex;
       flex-direction: row;
+      justify-content: center;
       width: 100%; }
       #contentwrapper #content #board #calendar {
         width: 65%;
@@ -56,4 +63,24 @@
       #contentwrapper #content #board #links {
         display: flex;
         flex-direction: column;
-        padding: 1rem; }
+        margin: 2.2rem 0 1rem 0;
+        padding: 1rem;
+        border: 1px solid black;
+        background: #6f747a; }
+        #contentwrapper #content #board #links a {
+          text-align: center;
+          width: 20rem;
+          height: 20%;
+          margin: 0 0 1rem 0;
+          border: 1px solid black;
+          border-radius: 2px;
+          background: #2c96d3;
+          text-decoration: none;
+          color: black;
+          transition-duration: 0.4s; }
+        #contentwrapper #content #board #links a:hover {
+          background-color: #237ab4;
+          /* Blå */
+          color: white; }
+
+/*# sourceMappingURL=main.css.map */

@@ -12,7 +12,7 @@
 				<a id="logout" href="/logout">Logout</a>
 			</div>
 			<img id="logo"src="/static/images/asklepios.svg" class="center">
-			<div id="board">
+			<div id="board" >
 				<div id="calendar">
 				{% if current_user.is_authenticated %}
 					Dagens dato{{ date }}/{{month}}
@@ -22,8 +22,10 @@
 				{% endif %}
 				</div>
 				<div id="links">
-					<a href="https://www.Coronasmitte.dk">Coronasmitte.dk</a>
-					<a href="https://www.sst.dk/da/corona">Sundhedsstyrelse.dk</a>
+					<p>Links:</p>
+					<a href="/change" class="center">Rediger Kalender</a>
+					<a href="https://www.Coronasmitte.dk" class="center">Coronasmitte.dk</a>
+					<a href="https://www.sst.dk/da/corona" class="center">Sundhedsstyrelse.dk</a>
 				</div>
 			</div>
 			

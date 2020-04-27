@@ -38,13 +38,20 @@
 				background: #C84630;
 				text-decoration: none;
 				color: black;
+				transition-duration: 0.4s;
+			}
+			a:hover{
+				background-color: #A03122; /* Rød */
+  				color: #dddddd;
 			}
 
 		}
 		#board {
 			display: flex;
 			flex-direction: row;
+			justify-content:center;
 			width: 100%;
+
 			#calendar {
 				width: 65%;
 				padding: 1rem;
@@ -65,7 +72,27 @@
 			#links {
 				display: flex;
 				flex-direction: column;
+
+				margin: 2.2rem 0 1rem 0;
 				padding: 1rem;
+				border: 1px solid black;
+				background: rgba(111,116,122,1);
+				a{
+					text-align: center;
+					width:20rem;
+					height: 20%;
+					margin: 0 0 1rem 0;
+					border: 1px solid black;
+					border-radius: 2px;
+					background: #2c96d3;
+					text-decoration: none;
+					color: black;
+					transition-duration: 0.4s;
+				}
+				a:hover{
+					background-color: #237ab4; /* Blå */
+  					color: white;
+				}
 			}
 		}
 		
