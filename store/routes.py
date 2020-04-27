@@ -11,12 +11,10 @@ from math import ceil
 def home():
 	table = ""
 	if current_user.is_authenticated:
+		print(current_user.username)
 		begivenhedList = Begivenhed.query.filter_by(dag_id=current_user.id)
 		table = calendarTable(begivenhedList)
-	return render_template("home.html", table=table)
-
-
-
+	return render_template("home.html", date=datetime.now().day,month=datetime.now().month, table=table)
 
 
 @app.route('/signup', methods=["GET","POST"])
@@ -46,15 +44,10 @@ def signup():
 				db.session.add(Begivenhed(time=str(j)+":00",content="",dag_id=dag.id))
 			#Laver en manuel begivenhed med content "Vask hænder!" klokken 24
 			db.session.commit()
-			
-		
 
 		return redirect('/login')
 	return render_template("signup.html", form=form)
 	
-		
-	
-
 
 @app.route('/login', methods=["GET","POST"])
 def login():
@@ -69,6 +62,7 @@ def login():
 				return redirect(next_page)
 			return redirect('/home')
 	return render_template("login.html", form=form)
+
 
 @app.route('/logout')
 def logout():

@@ -24,8 +24,8 @@
 		flex-direction: column;
 		#calendar {
 			width: 100%;
-		}
-		table {
+			
+			table {
 			width: 50%;
 			border: .2rem solid black;
 			border-radius: .1rem;
@@ -38,5 +38,7 @@
 				text-align: center;
 			}
 		}
+		}
+		
 	}
 }

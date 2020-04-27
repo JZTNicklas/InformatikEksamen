@@ -13,7 +13,10 @@
 
 			<div id="calendar">
 				{% if current_user.is_authenticated %}
+					{{ date }}/{{month}}
 					{{ table }}
+				{% else %}
+					<a href="/login">Login</a>
 				{% endif %}
 			</div>
 		</div>
