@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif; 
+}
+
+.center {
+	display:flex;
+	justify-content: center;
+	align-items:center;
+}
+
+#contentwrapper {
+	position:absolute;
+	width:100%;
+	height:100%;
+	background: rgb(64,67,81);
+	background: linear-gradient(235deg, rgba(64,67,81,1) 0%, rgba(156,161,164,1) 98%);
+	
+	#content {
+		display:flex;
+		flex-direction: column;	
+		font-size: 150%;
+
+		#logo {
+			height:auto;
+			width:50%;
+			margin-top: 5%;
+			padding: 2rem;
+		}
+		#formDiv {
+			width: 50%;
+			height: 40%;
+			form {
+				width: 50%;
+			}
+			input {
+				width:100%;
+				border-radius: 5px;
+				height:2rem;
+				font-size: 1.3rem;
+				margin:0.1rem 0 1rem 0;
+			}	
+			#submit {
+				border-radius: 10px;
+				width:100%;
+				height:3em;
+				font-size: 100%;
+				background-color: #A7E68E;
+				border:2px solid #404351;
+				transition-duration: 0.4s;
+			}
+		}	
+	}
+}

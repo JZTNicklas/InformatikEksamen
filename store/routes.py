@@ -1,3 +1,11 @@
+'''
+Under hver route defineres en funktion som siger hvad der skal ske når den specifikke route bliver requestet.
+Skal altid return noget; for det meste: 
+render_template(): viser den givne Jinja2 template(html filer mm.)
+redirect(): redirecter til en anden route
+'''
+
+#Mange imports er fordi koden er delt op i flere filer i samme package. Det der skal bruges flere steder importeres så fra "Store" package
 from flask import render_template, redirect, url_for, request, make_response
 from store.models import Users, calendarTable, Calendar, Dag, Begivenhed
 from store.forms import RegistrationForm, LoginForm, ChangeForm
@@ -6,13 +14,18 @@ from flask_login import login_user, logout_user, current_user, login_required
 from datetime import datetime, date
 from math import ceil
 
+
+
+
 @app.route('/')
 @app.route('/home')
 def home():
+	#Få dagens date object.
 	idag = date.today()
 	table = ""
+	#Hvis man er logget ind, 
 	if current_user.is_authenticated:
-		begivenhedList = Begivenhed.query.filter_by(dag_id=idag.isoweekday())
+		begivenhedList = Begivenhed.query.filter_by(dag_id=idag.isoweekday()+((current_user.id-1)*7))
 		table = calendarTable(begivenhedList)
 		return render_template("home.html", date=idag.day,month=idag.month, table=table)
 	else:

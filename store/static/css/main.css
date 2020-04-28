@@ -14,7 +14,8 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(235deg, #404351 0%, #9ca1a4 98%); }
+  background: linear-gradient(235deg, #404351 0%, #9ca1a4 98%);
+  /* Grå gradient */ }
   #contentwrapper #logo {
     width: 30%; }
   #contentwrapper #content {
@@ -34,13 +35,15 @@
         border: 1px solid black;
         border-radius: 2px;
         background: #C84630;
+        /* Rød */
         text-decoration: none;
         color: black;
         transition-duration: 0.4s; }
       #contentwrapper #content #nav a:hover {
         background-color: #A03122;
-        /* Rød */
-        color: #dddddd; }
+        /* Mørkere Rød */
+        color: #dddddd;
+        /* Grå */ }
     #contentwrapper #content #board {
       display: flex;
       flex-direction: row;
@@ -53,7 +56,8 @@
           width: 100%;
           border: .2rem solid black;
           border-radius: .1rem;
-          background-color: #F7FFF7; }
+          background-color: #F7FFF7;
+          /* Hvid-ish */ }
           #contentwrapper #content #board #calendar table td, #contentwrapper #content #board #calendar table thead {
             height: 1rem;
             border: .1rem solid black;
@@ -66,19 +70,23 @@
         margin: 2.2rem 0 1rem 0;
         padding: 1rem;
         border: 1px solid black;
-        background: #6f747a; }
+        background: #6f747a;
+        /* Grå */ }
         #contentwrapper #content #board #links a {
           text-align: center;
           width: 20rem;
           height: 20%;
-          margin: 0 0 1rem 0;
+          margin: auto;
           border: 1px solid black;
           border-radius: 2px;
           background: #2c96d3;
+          /* Blå */
           text-decoration: none;
           color: black;
           transition-duration: 0.4s; }
         #contentwrapper #content #board #links a:hover {
           background-color: #237ab4;
-          /* Blå */
+          /* Mørkere Blå */
           color: white; }
+        #contentwrapper #content #board #links p {
+          padding-bottom: 1rem; }

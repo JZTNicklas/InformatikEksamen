@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Asklepios</title>
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/change.css') }}">
 	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -11,15 +11,15 @@
 			
 			<img id="logo"src="/static/images/asklepios.svg" class="center">
 
-			<div id="calendar">
+			<div id="formDiv" class="center">
 				{% if current_user.is_authenticated %}
 					<form method="POST" action="">
 						{{ form.hidden_tag() }}	
-						<p>Dag</p>
+						<p>Dag (1-7)</p>
 						{{ form.dag }}
-						<p>Time</p>
+						<p>Time (0-23)</p>
 						{{ form.time }}
-						<p>Content</p>
+						<p>Begivenhed</p>
 						{{ form.content }}
 						{{ form.submit }}
 					</form>

@@ -15,7 +15,7 @@
 			<div id="board" >
 				<div id="calendar">
 				{% if current_user.is_authenticated %}
-					Dagens dato{{ date }}/{{month}}
+					Dagens dato {{ date }}/{{month}}
 					{{ table }}
 				{% else %}
 					<a href="/login">Login</a>
@@ -23,10 +23,10 @@
 				</div>
 				<div id="links">
 					<p>Links:</p>
-					<a href="/change" class="center">Rediger Kalender</a>
+					<a href="/change" class="center"><b>Rediger Kalender</b></a>
 					<a href="https://www.Coronasmitte.dk" class="center">Coronasmitte.dk</a>
 					<a href="https://www.sst.dk/da/corona" class="center">Sundhedsstyrelse.dk</a>
-					<a href="https://www.google.dk/maps/search/hospital/data=!3m1!4b1" class="center">Search for hospitals</a>
+					<a href="https://www.google.dk/maps/search/hospital/data=!3m1!4b1" class="center">Søg efter hospitaler</a>
 				</div>
 			</div>
 			

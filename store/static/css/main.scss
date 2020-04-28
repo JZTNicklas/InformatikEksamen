@@ -15,7 +15,7 @@
 	position:absolute;
 	width:100%;
 	height:100%;
-	background: linear-gradient(235deg, rgba(64,67,81,1) 0%, rgba(156,161,164,1) 98%);
+	background: linear-gradient(235deg, rgba(64,67,81,1) 0%, rgba(156,161,164,1) 98%); /* Grå gradient */
 	#logo {
 		width: 30%;
 	}
@@ -35,14 +35,14 @@
 				padding: .3rem;
 				border: 1px solid black;
 				border-radius: 2px;
-				background: #C84630;
+				background: #C84630; /* Rød */
 				text-decoration: none;
 				color: black;
 				transition-duration: 0.4s;
 			}
 			a:hover{
-				background-color: #A03122; /* Rød */
-  				color: #dddddd;
+				background-color: #A03122; /* Mørkere Rød */
+  				color: #dddddd; /* Grå */
 			}
 
 		}
@@ -59,7 +59,7 @@
 					width: 100%;
 					border: .2rem solid black;
 					border-radius: .1rem;
-					background-color: #F7FFF7;
+					background-color: #F7FFF7; /* Hvid-ish */
 					td, thead {
 						height: 1rem;
 						border: .1rem solid black;
@@ -76,22 +76,25 @@
 				margin: 2.2rem 0 1rem 0;
 				padding: 1rem;
 				border: 1px solid black;
-				background: rgba(111,116,122,1);
+				background: rgba(111,116,122,1); /* Grå */
 				a{
 					text-align: center;
 					width:20rem;
 					height: 20%;
-					margin: 0 0 1rem 0;
+					margin: auto;
 					border: 1px solid black;
 					border-radius: 2px;
-					background: #2c96d3;
+					background: #2c96d3; /* Blå */
 					text-decoration: none;
 					color: black;
 					transition-duration: 0.4s;
 				}
 				a:hover{
-					background-color: #237ab4; /* Blå */
+					background-color: #237ab4; /* Mørkere Blå */
   					color: white;
+				}
+				p {
+					padding-bottom: 1rem;
 				}
 			}
 		}

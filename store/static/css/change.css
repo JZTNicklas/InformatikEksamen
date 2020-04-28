@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif; }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#contentwrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #404351;
+  background: linear-gradient(235deg, #404351 0%, #9ca1a4 98%); }
+  #contentwrapper #content {
+    display: flex;
+    flex-direction: column;
+    font-size: 150%; }
+    #contentwrapper #content #logo {
+      height: auto;
+      width: 50%;
+      margin-top: 5%;
+      padding: 2rem; }
+    #contentwrapper #content #formDiv {
+      width: 50%;
+      height: 40%; }
+      #contentwrapper #content #formDiv form {
+        width: 50%; }
+      #contentwrapper #content #formDiv input {
+        width: 100%;
+        border-radius: 5px;
+        height: 2rem;
+        font-size: 1.3rem;
+        margin: 0.1rem 0 1rem 0; }
+      #contentwrapper #content #formDiv #submit {
+        border-radius: 10px;
+        width: 100%;
+        height: 3em;
+        font-size: 100%;
+        background-color: #A7E68E;
+        border: 2px solid #404351;
+        transition-duration: 0.4s; }
