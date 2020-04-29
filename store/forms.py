@@ -19,5 +19,3 @@ class ChangeForm(FlaskForm):
 	time = IntegerField("time", validators=[InputRequired(), NumberRange(min=0,max=23)])
 	content = StringField("content")
 	submit = SubmitField("Gem")
-
-''', validators=[DataRequired()]'''

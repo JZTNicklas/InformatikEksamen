@@ -52,12 +52,9 @@ def signup():
 			db.session.add(Dag(calendar_id=cal.id))
 			db.session.commit()
 			
-			dag = Dag.query.filter_by(calendar_id=cal.id)[i]
-			db.session.add(Begivenhed(time="00:00",content="Vask hænder!",dag_id=dag.id))
-			for j in range(1,24):
-				#Laver 23 begivenheder uden content, bare så de eksistere i databasen
+			for j in range(24):
+				#Laver 24 begivenheder uden content, bare så de eksistere i databasen
 				db.session.add(Begivenhed(time=str(j)+":00",content="",dag_id=dag.id))
-			#Laver en manuel begivenhed med content "Vask hænder!" klokken 24
 			db.session.commit()
 
 		return redirect('/login')
