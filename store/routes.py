@@ -52,6 +52,7 @@ def signup():
 			db.session.add(Dag(calendar_id=cal.id))
 			db.session.commit()
 			
+			dag = Dag.query.filter_by(calendar_id=cal.id)[i]
 			for j in range(24):
 				#Laver 24 begivenheder uden content, bare så de eksistere i databasen
 				db.session.add(Begivenhed(time=str(j)+":00",content="",dag_id=dag.id))
