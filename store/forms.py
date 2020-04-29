@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, IntegerField
-from wtforms.validators import DataRequired, Length, Email, ValidationError, NumberRange
+from wtforms.validators import DataRequired, Length, Email, ValidationError, NumberRange, InputRequired
 from store.models import Users
 
 class RegistrationForm(FlaskForm):
@@ -15,9 +15,9 @@ class LoginForm(FlaskForm):
 	submit = SubmitField("Log ind")
 
 class ChangeForm(FlaskForm):
-	dag = IntegerField("dag", validators=[DataRequired(),NumberRange(min=1,max=7)])
-	time = IntegerField("time", validators=[DataRequired(),NumberRange(min=0,max=23)])
-	content = StringField("content", validators=[DataRequired()])
+	dag = IntegerField("dag", validators=[DataRequired(), NumberRange(min=1,max=7)])
+	time = IntegerField("time", validators=[InputRequired(), NumberRange(min=0,max=23)])
+	content = StringField("content")
 	submit = SubmitField("Gem")
 
 ''', validators=[DataRequired()]'''
