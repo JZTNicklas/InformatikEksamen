@@ -1,3 +1,11 @@
+'''
+__init__.py laver 'store' mappen om til en Python-package. __init__ bruges til at initialisere alle tingene
+der skal bruges til hjemmesiden. 
+
+Appen, databasen, loginmanager, Bcrypt til hashing osv.
+'''
+
+#Mange imports er fordi koden er delt op i flere filer i samme package. Det der skal bruges flere steder importeres så fra vores "store" package
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager

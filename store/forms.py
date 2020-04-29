@@ -1,3 +1,10 @@
+'''
+Alle forms bliver defineret som klasser. Forms bliver omdannet til html forms når de bliver renderet,
+og bliver derfor brugt som vores primære input kilder
+'''
+
+
+#Mange imports er fordi koden er delt op i flere filer i samme package. Det der skal bruges flere steder importeres så fra vores "store" package
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, IntegerField
 from wtforms.validators import DataRequired, Length, Email, ValidationError, NumberRange, InputRequired
