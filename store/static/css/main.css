@@ -10,16 +10,16 @@
   align-items: center;
   justify-content: center; }
 
-#contentwrapper {
-  position: fixed;
-  width: 100%;
-  height: 100%;
+body {
   background: linear-gradient(235deg, #404351 0%, #9ca1a4 98%);
-  /* Grå gradient */ }
+  background-attachment: fixed; }
+
+#contentwrapper {
+  width: 100%;
+  height: 100%; }
   #contentwrapper #logo {
     width: 30%; }
   #contentwrapper #content {
-    position: static;
     display: flex;
     flex-direction: column; }
     #contentwrapper #content #nav {

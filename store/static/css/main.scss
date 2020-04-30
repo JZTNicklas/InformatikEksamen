@@ -10,17 +10,18 @@
 	align-items:center;
 	justify-content: center;
 }
-
+body {
+	background: linear-gradient(235deg, rgba(64,67,81,1) 0%, rgba(156,161,164,1) 98%);
+	background-attachment: fixed;
+}
 #contentwrapper {
-	position: fixed;
 	width:100%;
 	height:100%;
-	background: linear-gradient(235deg, rgba(64,67,81,1) 0%, rgba(156,161,164,1) 98%); /* Grå gradient */
+	
 	#logo {
 		width: 30%;
 	}
 	#content {
-		position: static;
 		display: flex;
 		flex-direction: column;
 		#nav {

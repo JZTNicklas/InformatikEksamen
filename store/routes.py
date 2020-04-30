@@ -27,7 +27,7 @@ def home():
 	if current_user.is_authenticated:
 		begivenhedList = Begivenhed.query.filter_by(dag_id=idag.isoweekday()+((current_user.id-1)*7)) #Query databasen med begivenheder. 
 		table = calendarTable(begivenhedList)
-		return render_template("home.html",dag=dage[idag.isoweekday()-1], date=idag.day,month=idag.month, table=table) #Render 'home.html', giv dagens dato og måned og tabellen over begivenheder
+		return render_template("home.html",day=dage[idag.isoweekday()-1], date=idag.day,month=idag.month, table=table) #Render 'home.html', giv dagens dato og måned og tabellen over begivenheder
 	else: #Hvis man ikke er logget ind, redirect til /login
 		return redirect('/login')
 
