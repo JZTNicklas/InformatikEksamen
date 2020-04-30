@@ -51,10 +51,18 @@
 			flex-direction: row;
 			justify-content:center;
 			width: 100%;
-
+			margin: 1rem 0 0 0;
 			#calendar {
 				width: 65%;
-				padding: 1rem;
+				margin: 1rem;
+				padding: .2rem;
+				border: .3rem solid black;
+				background-color: rgb(161,166,172);
+				p {
+					font-size: 2rem;
+					text-align: center;
+					margin: 0 0 .5rem 0;
+				}
 				table {
 					width: 100%;
 					border: .2rem solid black;
@@ -72,11 +80,14 @@
 			#links {
 				display: flex;
 				flex-direction: column;
-
-				margin: 2.2rem 0 1rem 0;
+				font-size: 1.2rem;
+				margin: 1rem 0 1rem 0;
 				padding: 1rem;
-				border: 1px solid black;
-				background: rgba(111,116,122,1); /* Grå */
+				border: .3rem solid black;
+				background: rgb(161,166,172); /* Grå */
+				p {
+					font-size: 2rem;
+				}
 				a{
 					text-align: center;
 					width:20rem;

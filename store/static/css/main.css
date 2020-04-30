@@ -48,10 +48,18 @@
       display: flex;
       flex-direction: row;
       justify-content: center;
-      width: 100%; }
+      width: 100%;
+      margin: 1rem 0 0 0; }
       #contentwrapper #content #board #calendar {
         width: 65%;
-        padding: 1rem; }
+        margin: 1rem;
+        padding: .2rem;
+        border: .3rem solid black;
+        background-color: #a1a6ac; }
+        #contentwrapper #content #board #calendar p {
+          font-size: 2rem;
+          text-align: center;
+          margin: 0 0 .5rem 0; }
         #contentwrapper #content #board #calendar table {
           width: 100%;
           border: .2rem solid black;
@@ -67,11 +75,14 @@
       #contentwrapper #content #board #links {
         display: flex;
         flex-direction: column;
-        margin: 2.2rem 0 1rem 0;
+        font-size: 1.2rem;
+        margin: 1rem 0 1rem 0;
         padding: 1rem;
-        border: 1px solid black;
-        background: #6f747a;
+        border: .3rem solid black;
+        background: #a1a6ac;
         /* Grå */ }
+        #contentwrapper #content #board #links p {
+          font-size: 2rem; }
         #contentwrapper #content #board #links a {
           text-align: center;
           width: 20rem;

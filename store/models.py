@@ -69,5 +69,5 @@ class Begivenhed(db.Model):
 class calendarTable(Table):
     id = Col('id', show=False)
     time = Col("Tid")
-    content = Col('Din Kalender')
+    content = Col('Begivenheder')
     
