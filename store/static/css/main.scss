@@ -20,6 +20,7 @@
 		width: 30%;
 	}
 	#content {
+		position: static;
 		display: flex;
 		flex-direction: column;
 		#nav {

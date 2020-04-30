@@ -19,6 +19,7 @@
   #contentwrapper #logo {
     width: 30%; }
   #contentwrapper #content {
+    position: static;
     display: flex;
     flex-direction: column; }
     #contentwrapper #content #nav {

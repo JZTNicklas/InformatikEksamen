@@ -9,13 +9,13 @@
 	<div id="contentwrapper">
 		<div id="content" class="center">
 			<div id="nav">
-				<a id="logout" href="/logout">Logout</a>
+				<a id="logout" href="/logout">Log ud</a>
 			</div>
 			<img id="logo"src="/static/images/asklepios.svg" class="center">
 			<div id="board">
 				<div id="calendar">
 				{% if current_user.is_authenticated %}
-					<p id="dato">{{dag}} d. {{ date }}/{{month}}:</p>
+					<p id="dato">{{day}} d. {{ date }}/{{month}}:</p>
 					{{ table }}
 				{% else %}
 					<a href="/login">Login</a>
