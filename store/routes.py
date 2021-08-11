@@ -71,7 +71,7 @@ def login():
 
 @app.route('/logout')
 def logout():
-	logout_user() #Logout user
+	logout_user()
 	return redirect('/login')
 
 @app.route('/change', methods=["GET","POST"])
